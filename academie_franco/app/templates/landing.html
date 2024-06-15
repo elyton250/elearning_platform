@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com  -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Academie Franco | Home</title>
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- navcss -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+
+    <!-- services CDN -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav-land.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}" />
+  </head>
+  <body>
+    <!-- nav bar -->
+
+    <nav class="navbar navbar-expand-custom navbar-mainbg" id="nav">
+        <a class="navbar-brand navbar-logo" href="#"><img src="{{ url_for('static', filename="assets/images/logo/1.png") }}" alt="logo" id="logo"></a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white" id="i"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt" id="i"></i>Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book" id="i"></i>Sign-In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone" id="i"></i>Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-users" id="i"></i>
+                      Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-info-circle" id="about-us-icon"></i>
+                      About Us</a>
+                </li>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy" id="i"></i>Documents</a>
+                </li>-->
+            </ul>
+        </div>
+    </nav>
+
+        <!-- header -->
+    <section class="main swiper mySwiper">
+      <div class="wrapper swiper-wrapper">
+        <div class="slide swiper-slide">
+          <img src="images/img1.jpg" alt="" class="image" />
+          <div class="image-data">
+            <span class="text">Enjoy the finest coffee drinks.</span>
+            <h2>
+              Enjoy Our Exclusive <br />
+              Coffee and Cocktails
+            </h2>
+            <a href="#" class="button">About Us</a>
+          </div>
+        </div>
+        <div class="slide swiper-slide">
+          <img src="images/img2.jpg" alt="" class="image" />
+          <div class="image-data">
+            <span class="text">We really like what we do.</span>
+            <h2>
+              Coffee Beans with a <br />
+              Perfect Aroma
+            </h2>
+            <a href="#" class="button">About Us</a>
+          </div>
+        </div>
+        <div class="slide swiper-slide">
+          <img src="images/img3.jpg" alt="" class="image" />
+          <div class="image-data">
+            <span class="text">Making Our coffee with lover.</span>
+            <h2>
+              Alluring and Fragrant <br />
+              Coffee Aroma
+            </h2>
+            <a href="#" class="button">About Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-button-next nav-btn"></div>
+      <div class="swiper-button-prev nav-btn"></div>
+      <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- our services -->
+
+    <section class="c-section">
+        <h2 class="c-section__title">
+          <span>Our Services</span>
+        </h2>
+        <ul class="c-services">
+          <li class="c-services__item">
+            <h3>French Language Courses</h3>
+            <p>These are the core offerings of a French language school. The courses are often adapted to all levels, from beginners to advanced learners1. They may include intensive short courses, semester-based courses, university-specific certifications, and preparatory courses for French as a Foreign Language certifications1.</p>
+          </li>
+          <li class="c-services__item">
+            <h3>Internationally Recognized Certifications</h3>
+            <p>The courses often align with the requirements of internationally-recognized certifications, such as the Common European Framework of Reference for Languages.
+            </p>
+          </li>
+          <li class="c-services__item">
+            <h3>Cultural Learning</h3>
+            <p>Many schools incorporate aspects of French culture and civilization into their curriculum1. This can include lessons on French history, literature, art, and society.</p>
+          </li>
+          <li class="c-services__item">
+            <h3>Extracurricular Activities</h3>
+            <p>Schools often organize activities outside of the classroom to enrich the learning experience. These can include city tours, museum visits, wine tastings, and hiking trips</p>
+          </li>
+          <li class="c-services__item">
+            <h3>Flexible Learning Environment</h3>
+            <p>Language schools typically offer a structured yet flexible learning environment, with schedules comprising around 20 general French lessons per week</p>
+          </li>
+          <li class="c-services__item">
+            <h3>Professional Development</h3>
+            <p> We offer courses aimed at professionals wishing to improve their French language skills</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- footer -->
+
+        <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6>About</h6>
+              <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Categories</h6>
+              <ul class="footer-links">
+                <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+                <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+                <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+                <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+                <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+                <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Quick Links</h6>
+              <ul class="footer-links">
+                <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+           <a href="#">Scanfcode</a>.
+              </p>
+            </div>
+  
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+              </ul>
+            </div>
+          </div>
+        </div>
+  </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <!-- nav script -->
+    <script src="{{ url_for('static', filename='js/nav-script.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
