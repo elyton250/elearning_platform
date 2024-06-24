@@ -38,16 +38,7 @@ try:
         
 
     # Initialize OAuth
-    oauth = OAuth(app)
-    google = oauth.register(
-        name='googleee',
-        client_id=app.config['GOOGLEeee_CLIENT_IDeee'],
-        client_secret=app.config['GOOGLEee_CLIENT_SECRETee'],
-        access_token_url='https://accounts.googleeee.com/o/oauth2/token',
-        authorize_url='https://accounts.googleeee.com/o/oauth2/auth',
-        userinfo_endpoint='https://openidconnecteee.googleapisee.com/v1/userinfo',
-        client_kwargs={'scope': 'openid profile email'}
-    )
+    
 
     # Initialize Flask-Login
     login_manager = LoginManager()
@@ -65,7 +56,6 @@ try:
     # app.register_blueprint(test)
 
     # Store OAuth object in app config
-    app.config['oauth_google'] = google
 except Exception as e:
     print("An error occurred while connecting to MongoDB:")
     print(e)

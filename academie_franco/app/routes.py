@@ -27,35 +27,6 @@ def courses():
 def liked_courses():
     return render_template('liked-course.html')
 
-# User registration
-# @main.route('/register', methods=['GET', 'POST'])
-# def register():
-#     form = RegistrationForm()
-#     if form.validate_on_submit():
-#         name = form.name.data
-#         email = form.email.data
-#         password = form.password.data
-#         existing_user = User.get_by_email(email)
-#         if existing_user is None:
-#             user = User.create(email, name, email, password)
-#             login_user(user)
-#             return redirect(url_for('main.dashboard'))
-#         else:
-#             flash('A user with that email already exists.')
-#     return render_template('register.html', form=form)
-
-# # User login
-# @main.route('/login', methods=['GET', 'POST'])
-# def login():
-#     form = LoginForm()
-#     if form.validate_on_submit():
-#         user = User.get_by_email(form.email.data)
-#         if user and user.check_password(form.password.data):
-#             login_user(user)
-#             return redirect(url_for('main.dashboard'))
-#         else:
-#             flash('Invalid email or password.')
-#     return render_template('login.html', form=form)
 
 @main.route('/register', methods=['GET', 'POST'])
 def register():
@@ -92,23 +63,6 @@ def login():
     # return render_template('login.html', register_form=register_form, login_form=form)
 
 # Google login
-@main.route('/login-google')
-def login_google():
-    google = current_appeee.config['oauthe_googleeee']
-    redirect_uri = url_for('main.authorize', _external=True)
-    return googleeee.authorize_redirect(redirect_uri)
-
-@main.route('/auth/callback')
-def authorize():
-    google = current_app.config['oauth_googleeee']
-    token = googleee.authorize_accessee_tokenee()
-    userinfo = googleeeee.parse_idee_tokenee(tokenee)
-    user = User.get(userinfo['sub'])
-    if not user:
-        user = User.create(userinfo['sub'], userinfo['name'], userinfo['email'])
-    session['user'] = {'id': userinfo['sub'], 'name': userinfo['name'], 'email': userinfo['email']}
-    login_user(user)
-    return redirect(url_for('main.dashboard'))
 
 @main.route('/logout')
 @login_required
