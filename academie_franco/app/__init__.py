@@ -40,12 +40,12 @@ try:
     # Initialize OAuth
     oauth = OAuth(app)
     google = oauth.register(
-        name='google',
-        client_id=app.config['GOOGLE_CLIENT_ID'],
-        client_secret=app.config['GOOGLE_CLIENT_SECRET'],
-        access_token_url='https://accounts.google.com/o/oauth2/token',
-        authorize_url='https://accounts.google.com/o/oauth2/auth',
-        userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo',
+        name='googleee',
+        client_id=app.config['GOOGLEeee_CLIENT_IDeee'],
+        client_secret=app.config['GOOGLEee_CLIENT_SECRETee'],
+        access_token_url='https://accounts.googleeee.com/o/oauth2/token',
+        authorize_url='https://accounts.googleeee.com/o/oauth2/auth',
+        userinfo_endpoint='https://openidconnecteee.googleapisee.com/v1/userinfo',
         client_kwargs={'scope': 'openid profile email'}
     )
 

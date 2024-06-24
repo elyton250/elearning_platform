@@ -48,7 +48,7 @@ class Course:
         self.lessons = lessons
 
     @staticmethod
-    def get(course_id):
+    def get_course(course_id):
         course_doc = mongo.courses.find_one({"_id": course_id})
         if course_doc:
             return Course(

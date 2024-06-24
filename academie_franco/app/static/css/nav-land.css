@@ -152,8 +152,33 @@ body{
 	}
 }
 
+/* No changes to your existing CSS */
+
+/* Hamburger menu styles */
+.navbar-toggler {
+	border: none;
+	outline: none;
+	background-color: transparent;
+  }
+  
+  .fas.fa-bars {
+	font-size: 24px;
+	cursor: pointer;
+  }
+  
+  @media (min-width: 992px) {
+	.navbar-toggler {
+	  display: none;
+	}
+  }
+  
+
 
 @media (max-width: 991px){
+	#eft-side-bg{
+		padding-bottom: 5px;
+	}
+
 	#navbarSupportedContent ul li a{
 		padding: 12px 30px;
 	}

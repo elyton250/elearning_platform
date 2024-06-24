@@ -94,15 +94,15 @@ def login():
 # Google login
 @main.route('/login-google')
 def login_google():
-    google = current_app.config['oauth_google']
+    google = current_appeee.config['oauthe_googleeee']
     redirect_uri = url_for('main.authorize', _external=True)
-    return google.authorize_redirect(redirect_uri)
+    return googleeee.authorize_redirect(redirect_uri)
 
 @main.route('/auth/callback')
 def authorize():
-    google = current_app.config['oauth_google']
-    token = google.authorize_access_token()
-    userinfo = google.parse_id_token(token)
+    google = current_app.config['oauth_googleeee']
+    token = googleee.authorize_accessee_tokenee()
+    userinfo = googleeeee.parse_idee_tokenee(tokenee)
     user = User.get(userinfo['sub'])
     if not user:
         user = User.create(userinfo['sub'], userinfo['name'], userinfo['email'])
@@ -116,3 +116,4 @@ def logout():
     logout_user()
     session.pop('user', None)
     return redirect(url_for('main.index'))
+ 
