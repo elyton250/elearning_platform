@@ -38,7 +38,16 @@ try:
         
 
     # Initialize OAuth
-    
+    oauth = OAuth(app)
+    google = oauth.register(
+        name='google',
+        client_id=app.config['GOOGLE_CLIENT_ID'],
+        client_secret=app.config['GOOGLE_CLIENT_SECRET'],
+        access_token_url='https://accounts.google.com/o/oauth2/token',
+        authorize_url='https://accounts.google.com/o/oauth2/auth',
+        userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo',
+        client_kwargs={'scope': 'openid profile email'}
+    )
 
     # Initialize Flask-Login
     login_manager = LoginManager()
@@ -56,6 +65,7 @@ try:
     # app.register_blueprint(test)
 
     # Store OAuth object in app config
+    app.config['oauth_google'] = google
 except Exception as e:
     print("An error occurred while connecting to MongoDB:")
     print(e)
