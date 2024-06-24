@@ -15,13 +15,25 @@ body{
 	height: 60px;
 	width: auto;
 }
+#left-side-bg {
+	background-color: white;
+	width: 30%;
+	border-bottom-right-radius:80%;
+	/* padding-left: 30%; */
+	/* border: 1px solid red; */
+}
+/* #nav {
+	height: 100px;
+} */
 /*----------bootstrap-navbar-css------------*/
 .navbar-logo{
 	padding: 15px;
 	color: #fff;
 }
 .navbar-mainbg{
-	background-color: rgba(81, 97, 206, 0.8);
+	background-color: rgba(81, 97, 206, 1);
+	/* background-color: white; */
+	height: 60px;
 
 	/* opacity: 0.5; */
 	padding: 0px;

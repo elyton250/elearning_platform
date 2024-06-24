@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/login.css') }}">
+    <title>Modern Login Page | AsmrProg</title>
+</head>
+
+<body>
+    {% if flash_messages %}
+                <div class="flash-messages">
+                    {% for category, message in flash_messages %}
+                    <div class="flash-message alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+    {% endif %}
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form method="POST" action="{{ url_for('main.register') }}">
+                {{ register_form.hidden_tag() }}
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Use your email to register</span><br>
+                {{ register_form.name.label }}<br>
+                {{ register_form.name(size=32) }}<br>
+                {% for error in register_form.name.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+                {% endfor %}
+                {{ register_form.email.label }}<br>
+                {{ register_form.email(size=32) }}<br>
+                {% for error in register_form.email.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+                {% endfor %}
+                {{ register_form.password.label }}<br>
+                {{ register_form.password(size=32) }}<br>
+                {% for error in register_form.password.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+                {% endfor %}
+                {{ register_form.confirm_password.label }}<br>
+                {{ register_form.confirm_password(size=32) }}<br>
+                {% for error in register_form.confirm_password.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+                {% endfor %}
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        {% if flash_messages %}
+                <div class="flash-messages">
+                    {% for category, message in flash_messages %}
+                    <div class="flash-message alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+        {% endif %}
+        <div class="form-container sign-in">
+            <form method="POST" action="{{ url_for('main.login') }}">
+                {{ login_form.hidden_tag() }}
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="{{ url_for('main.login_google') }}" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Use your email</span><br>
+                {{ login_form.email.label }}<br>
+                {{ login_form.email(size=32) }}<br>
+                {% for error in login_form.email.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+                {% endfor %}
+                {{ login_form.password.label }}<br>
+                {{ login_form.password(size=32) }}<br>
+                {% for error in login_form.password.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+                {% endfor %}
+                <a href="#">Forgot your password?</a><br>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome</h1>
+                    <img src="https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/305935996_445997794220603_2697507958715874722_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFgouFl4v6QAX-bixKX&_nc_ht=scontent-bog1-1.xx&oh=00_AfAjH_1853v7nu_M7kbiSTXx-p8XVUKcPEqipGJQCjm9hg&oe=654F3F02" alt="" class="logo" width="150px">
+                    <p>Register with your personal details</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome!!</h1>
+                    <img src="https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/305935996_445997794220603_2697507958715874722_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFgouFl4v6QAX-bixKX&_nc_ht=scontent-bog1-1.xx&oh=00_AfAjH_1853v7nu_M7kbiSTXx-p8XVUKcPEqipGJQCjm9hg&oe=654F3F02" alt="" class="logo" width="150px">
+                    <p>Enter your personal details</p>
+                    <button class="hidden" id="register">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+
+</html>

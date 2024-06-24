@@ -21,8 +21,9 @@ if not password:
 encoded_password = urllib.parse.quote_plus(password)
 
 # Construct the MongoDB URI
-uri = f"mongodb+srv://academie_franco:{encoded_password}@atlascluster.gwjj1uh.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster"
+# uri = "mongodb://localhost:27017/edu_app_db"
 # api = create_app()
+uri = f"mongodb+srv://academie_franco:{encoded_password}@atlascluster.gwjj1uh.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster"
 
 try:
     # Create a new client and connect to the server
@@ -31,9 +32,8 @@ try:
     # client.close()
 
     # Send a ping to confirm a successful connection
-    # client.admin.command('ping')
-    # print("Pinged your deployment. You successfully connected to MongoDB!")
-    # api.run(debug=True, port=5001)
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
 
 except Exception as e:
     print("An error occurred while connecting to MongoDB:")
