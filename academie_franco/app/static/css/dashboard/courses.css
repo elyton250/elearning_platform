@@ -1,19 +1,36 @@
-/* body{
-
-    background-color: #eee; 
-} */
-
-table th , table td{
-    text-align: center;
+/* Modern table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
 }
 
-table tr:nth-child(even){
-    background-color: #BEF2F5
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
 }
 
-.pagination li:hover{
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+td:last-child {
+    text-align: left;
+    width: 120px; /* Adjust the width as needed */
+}
+
+.enroll-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
     cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
 }
-		table tbody tr {
-			display: none;
-		}
+
+.confirmation {
+    display: none;
+}

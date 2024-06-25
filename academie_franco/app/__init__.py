@@ -26,6 +26,7 @@ try:
     # mongo.init_app(app)
     client = MongoClient(uri, server_api=ServerApi('1'))
     mongo = client['edu_app_db']
+        
     
         
     @app.route('/test_db_connection')
@@ -63,6 +64,9 @@ try:
     app.register_blueprint(main)
     # from app.test import test
     # app.register_blueprint(test)
+    
+    from app.api import api_v1
+    app.register_blueprint(api_v1, url_prefix='/api/v1')
 
     # Store OAuth object in app config
     app.config['oauth_google'] = google

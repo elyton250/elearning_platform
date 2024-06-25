@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect, url_for, session, render_template, current_app, flash,get_flashed_messages
 from flask_login import login_user, logout_user, login_required, current_user
-from app.models import User
-from app.forms import RegistrationForm, LoginForm
+from app.models import User, Course
+from app.forms import RegistrationForm, LoginForm, Enroll
 
 main = Blueprint('main', __name__)
 
@@ -19,9 +19,17 @@ def sign_in():
 def dashboard():
     return render_template('dashboard.html')
 
-@main.route('/courses')
-def courses():
-    return render_template('courses.html')
+
+#TODO: Checck why it is not validating  
+@main.route('/courses', methods=['GET', 'POST'])
+def courses(email=None, course_id=None):
+    enroll = Enroll()
+    if enroll.validate_on_submit():
+        email = enroll.email.data
+        User.add_course_to_user(email, course_id)
+    # print("didnt validate the form") 
+    courses = Course.get_all_courses()
+    return render_template('courses.html', courses=courses, enroll=enroll)
 
 @main.route('/liked_courses')
 def liked_courses():

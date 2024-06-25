@@ -34,9 +34,13 @@ try:
     # Send a ping to confirm a successful connection
     client.admin.command('ping')
     print("Pinged your deployment. You successfully connected to MongoDB!")
+    
 
 except Exception as e:
     print("An error occurred while connecting to MongoDB:")
     print(e)
+#TODO: add a check when mongo fails   
+# finally:
+#     client=
     
 
