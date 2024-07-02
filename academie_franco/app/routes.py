@@ -17,10 +17,24 @@ def sign_in():
 @main.route('/dash')
 @login_required
 def dashboard():
-    return render_template('dashboard.html')
+    name = current_user.name
+    user_email = current_user.email
+    course_ids = User.get_user_courses(user_email)
+    courses = []
+    for course_id in course_ids:
+        courses.append(Course.get_course(course_id))
+
+    # print(' this is the user email', user_email)
+    # print('I should print courses here', courses)
+    return render_template('dashboard.html', courses=courses, name=name)
+
+@main.route('/chat')
+@login_required
+def chatbot():
+    return render_template('chatbot.html')
 
 
-#TODO: Checck why it is not validating  
+# TODO: Checck why it is not validating  
 @main.route('/courses', methods=['GET', 'POST'])
 def courses(email=None, course_id=None):
     enroll = Enroll()
@@ -74,7 +88,7 @@ def register():
         password = form.password.data
         existing_user = User.get_by_email(email)
         if existing_user is None:
-            user = User.create(email, name, email, password)
+            user = User.create(name, email, password)
             login_user(user)
             return redirect(url_for('main.dashboard'))
         else:

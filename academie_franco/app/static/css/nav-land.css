@@ -31,6 +31,8 @@ body{
 	color: #fff;
 }
 .navbar-mainbg{
+	/* background: linear-gradient(to right, #000000, #512da8); */
+
 	background-color: rgba(81, 97, 206, 1);
 	/* background-color: white; */
 	height: 60px;

@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/logo/2.png') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Academie Franco | Home</title>
 
@@ -25,6 +26,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav-land.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" />
   </head>
   <body>
     <!-- nav bar -->
@@ -79,7 +81,7 @@
             <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt" id="i"></i>Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book" id="i"></i>Sign-In</a>
+            <a class="nav-link" href="{{url_for('main.login')}}"><i class="far fa-address-book" id="i"></i>Sign-In</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone" id="i"></i>Services</a>
@@ -100,12 +102,12 @@
         <div class="slide swiper-slide">
           <img src="{{url_for('static', filename='assets/images/content/student3.jpg')}}" alt="" class="image" />
           <div class="image-data">
-            <span class="text">Enjoy the finest coffee drinks.</span>
+            <span class="text">The courses align with the requirements of internationally-recognized certifications.</span>
             <h2>
-              Enjoy Our Exclusive <br />
-              Coffee and Cocktails
+              French Language<br/>
+              From Basics to Advanced.
             </h2>
-            <a href="#" class="button">About Us</a>
+            <a href="#footer" class="button">About Us</a>
           </div>
         </div>
         <div class="slide swiper-slide">
@@ -113,21 +115,21 @@
           <div class="image-data">
             <span class="text">We really like what we do.</span>
             <h2>
-              Coffee Beans with a <br />
-              Perfect Aroma
+              This can include lessons on French history, <br/>
+              literature, art, and society.
             </h2>
-            <a href="#" class="button">About Us</a>
+            <a href="#footer" class="button">About Us</a>
           </div>
         </div>
         <div class="slide swiper-slide">
           <img src="{{url_for('static', filename='assets/images/content/student2.jpg')}}" alt="studen" class="image" />
           <div class="image-data">
-            <span class="text">Making Our coffee with lover.</span>
+            <span class="text">Flexible Learning Environment.</span>
             <h2>
-              Alluring and Fragrant <br />
-              Coffee Aroma
+              structured yet flexible learning environment <br />
+              Online Schooling.
             </h2>
-            <a href="#" class="button">About Us</a>
+            <a href="#footer" class="button">About Us</a>
           </div>
         </div>
       </div>
@@ -172,25 +174,58 @@
         </ul>
       </section>
 
-      <!-- footer -->
+      <!-- footer and Team -->
+
+      <section class="team-sec">
+        <div class="wrapper">
+          <h1>Our Team</h1>
+          <div class="team">
+            <div class="team_member">
+              <div class="team_img">
+                <img src="{{url_for('static', filename='assets/images/content/student1.jpg')}}" alt="Team_image">
+              </div>
+              <h3>xxxx</h3>
+              <p class="role">xxxxx</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+            </div>
+            <div class="team_member">
+              <div class="team_img">
+                <img src="{{url_for('static', filename='assets/images/content/student1.jpg')}}" alt="Team_image">
+              </div>
+              <h3>xxxxx</h3>
+              <p class="role">xxxxx</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p></div>
+            <div class="team_member">
+              <div class="team_img">
+                <img src="{{url_for('static', filename='assets/images/content/student1.jpg')}}" alt="Team_image">
+              </div>
+              <h3>xxxx</h3>
+              <p class="role">xxxxxx</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
 
         <!-- Site footer -->
-    <footer class="site-footer">
-        <div class="container">
+    <footer class="site-footer" id="footer">
+        <div class="container" id="cont">
           <div class="row">
             <div class="col-sm-12 col-md-6">
               <h6>About</h6>
-              <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+              Embrace the beauty of the French language at Académie Franco! Our immersive learning environment fosters a love for French culture and empowers you to speak, understand, and write with confidence. Join us and embark on a rewarding journey towards French fluency.
+
             </div>
   
             <div class="col-xs-6 col-md-3">
               <h6>Categories</h6>
               <ul class="footer-links">
-                <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-                <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-                <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-                <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-                <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+                <li><a href="http://scanfcode.com/category/c-language/">Beginner french</a></li>
+                <li><a href="http://scanfcode.com/category/front-end-development/">Advanced French</a></li>
+                <li><a href="http://scanfcode.com/category/back-end-development/">Bussiness french</a></li>
+                <li><a href="http://scanfcode.com/category/java-programming-language/">Family French</a></li>
+                <li><a href="http://scanfcode.com/category/android/">French Culture</a></li>
                 <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
               </ul>
             </div>
@@ -211,8 +246,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-sm-6 col-xs-12">
-              <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
-           <a href="#">Scanfcode</a>.
+              <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved by 
+           <a href="#">Academie Franco</a>.
               </p>
             </div>
   
@@ -244,7 +279,11 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-      });
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        });     
     </script>
     <!-- nav script -->
     <script src="{{ url_for('static', filename='js/nav-script.js') }}"></script>

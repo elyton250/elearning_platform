@@ -11,13 +11,14 @@
      
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Academie Franco | Dash</title>
 </head>
 <body>
     <nav>
         <div class="logo-name">
             <div class="logo-image">
-               <img src="images/logo.png" alt="">
+               <img src="{{url_for('static', filename='assets/images/logo/3.png')}}" alt="">
             </div>
             <span class="logo_name">Academie Franco</span>
         </div>
@@ -31,9 +32,9 @@
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">List of Courses</span>
                 </a></li>
-                <li><a href="{{ url_for('main.liked_courses') }}">
-                    <i class="uil uil-thumbs-up"></i>
-                    <span class="link-name">Liked Courses</span>
+                <li><a href="{{ url_for('main.chatbot') }}">
+                    <i class="fas fa-robot"></i>
+                    <span class="link-name">Franco-AI</span>
                 </a></li>
                 <li><a href="#">
                     <i class="uil uil-comments"></i>
@@ -80,5 +81,6 @@
     </section>
     <script src="{{ url_for('static', filename='js/dashboard/dash.js') }}"></script>
     <script src="{{ url_for('static', filename='js/dashboard/courses.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/page-actions/enroll.js') }}"></script>
 </body>
 </html>

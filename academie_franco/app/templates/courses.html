@@ -14,7 +14,7 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Descrption</th>
-                                <th>price</th>
+                                <th>Course ID</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -22,18 +22,21 @@
                                 {% for course in courses %}
                                     <tr>
                                         <td>{{ course.title }}</td>
-                                        <td>{{course.descrption}}</td>
-                                        <td>{{course.instructor}}</td>
+                                        <td>{{course.description}}</td>
+                                        <td>{{course._id}}</td>
                                         <td>
                                             
                                             <button class="enroll-button">Enroll</button>
                                             <span class="confirmation">
                                                 <form  method="POST" action="{{ url_for('main.courses') }}">
-                                                    <span>Re-enter your email to confirm</span><br>
-                                                    {{ enroll.email.label }}<br>
-                                                    {{ enroll.email(size=32) }}<br>
-                                                    <button class="confirm">✓</button>
-                                                    <button class="cancel-button">❌</button>
+                                                        <span>Re-enter your email and course ID to confirm</span><br>
+                                                        <label for="email">Email:</label><br>
+                                                        <input type="email" id="email" name="email" size="32"><br>
+                                                        <label for="email">Course ID:</label><br>
+                                                        <input type="text" id="course_id" name="course_id" size="32"><br>
+                                                        <button class="confirm">✓</button>
+                                                        <button class="cancel-button">❌</button> 
+                                                    
                                                 </form>
                                                 <!-- <button class="confirm">✓</button>
                                                 <button class="cancel-button">❌</button>-->
@@ -115,4 +118,7 @@
     </div>
 </div>
 </div>
+<script>
+    
+  </script>
 {% endblock %}

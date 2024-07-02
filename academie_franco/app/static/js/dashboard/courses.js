@@ -1,4 +1,4 @@
-// JavaScript (script.js)
+
 document.addEventListener("DOMContentLoaded", function() {
     const enrollButtons = document.querySelectorAll(".enroll-button");
     enrollButtons.forEach(button => {
@@ -24,6 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
             deleteButton.style.display = "block";
         });
 
-        deleteButton.style.display = "none";
+        enrollButton.style.display = "none";
     }
 });

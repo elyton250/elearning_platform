@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from api.v1.engine import uri
+from engine.v1.engine import uri
 
 load_dotenv()
 

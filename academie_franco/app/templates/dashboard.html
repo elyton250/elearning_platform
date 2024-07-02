@@ -6,7 +6,49 @@
             <h3>Dashboard</h3>
         </div>
         <div class="card-body">
-            <p>Welcome to the dashboard</p>
+            <p>Welcome to your dashboard {{ name }}</p>
+            {% if courses %}
+                <h2>Enrolled courses</h2>
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Descrption</th>
+                            <th>Course ID</th>
+                            <!--<th>Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for course in courses %}
+                                <tr>
+                                    <td>{{ course.title }}</td>
+                                    <td>{{course.description}}</td>
+                                    <td>{{course._id}}</td>
+                                    <!-- <td>
+                                        
+                                        <button class="enroll-button">Enroll</button>
+                                        <span class="confirmation">
+                                            <form  method="POST" action="{{ url_for('main.courses') }}">
+                                                    <span>Re-enter your email and course ID to confirm</span><br>
+                                                    <label for="email">Email:</label><br>
+                                                    <input type="email" id="email" name="email" size="32"><br>
+                                                    <label for="email">Course ID:</label><br>
+                                                    <input type="text" id="course_id" name="course_id" size="32"><br>
+                                                    <button class="confirm">✓</button>
+                                                    <button class="cancel-button">❌</button> 
+                                                
+                                            </form>
+                                             <button class="confirm">✓</button>
+                                            <button class="cancel-button">❌</button>
+                                        </span>
+                                    </td> -->
+                                </tr>
+                            {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>You have not enrolled to any courses. Click on the courses tab to enroll to one of our courses.</p>
+            {% endif %}
         </div>
     </div>
 </div>
