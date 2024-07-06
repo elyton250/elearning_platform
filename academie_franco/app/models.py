@@ -27,6 +27,7 @@ class User(UserMixin):
         return user['courses']
     
     
+   
     @staticmethod
     def add_course_to_user(email, course_id):
         user = User.get_by_email_enroll(email)
@@ -42,32 +43,6 @@ class User(UserMixin):
         else:
             print("User not found")
 
-    # @staticmethod
-    # def add_course_to_user(email, course_id):
-    #     user = User.get_by_email(email)
-    #     if user:
-    #         if course_id not in user.get('courses'):
-    #             if 'courses' not in user:
-    #                 user['courses'] = []
-    #             user['courses'].append(course_id)
-    #             mongo.users.update_one({"_id": user["_id"]}, {"$set": {"courses": user['courses']}})
-    #             print("Course added to user")
-    #         else:
-    #             print("Course already added")
-    #     else:
-    #         print("User not found")
-    
-    # @staticmethod
-    # def add_course_to_user(email, course_id):
-    #     user = User.get_by_email(email)
-    #     if user and course_id not in user['courses']:
-    #         user['courses'].append(course_id)
-    #         mongo.users.update_one({"_id": user.id}, {"$set": {"courses": user.courses}})
-    #         print("Course added to user")
-    #     else:
-    #         print("User not found")
-    #         return user
-        
     @staticmethod
     def get(user_id):
         user_doc = mongo.users.find_one({"_id": user_id})
@@ -75,6 +50,8 @@ class User(UserMixin):
             return User(user_doc["_id"], user_doc["name"], user_doc["email"], user_doc.get("password_hash"))
         return None
 
+
+     # this function is used when enrolling a user to a course
     @staticmethod
     def get_by_email_enroll(email):
         user_doc = mongo.users.find_one({"email": email})
@@ -82,6 +59,7 @@ class User(UserMixin):
             return user_doc
         return None
     
+    #this function is used to get a user by email in login
     def get_by_email(email):
         user_doc = mongo.users.find_one({"email": email})
         if user_doc:
@@ -106,6 +84,17 @@ class User(UserMixin):
         return check_password_hash(self.password_hash, password)
 
 # this the course model
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#thr course model starts here
 class Course:
     def __init__(self, id, title, description=None, instructor=None, modules=None):
         self.id = id

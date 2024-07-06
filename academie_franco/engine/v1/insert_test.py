@@ -41,78 +41,82 @@ grades_collection.drop()
 
 # insertion samples
 
-users_data = [
-    {"name": "student1", "email": "student1@example.com", "password": "hashed_password", "roles": ["student"]},
-    { "name": "instructor1", "email": "instructor1@example.com", "password": "hashed_password", "roles": ["instructor"]}
-]
+# users_data = [
+#     {"name": "student1", "email": "student1@example.com", "password": "hashed_password", "roles": ["student"]},
+#     { "name": "instructor1", "email": "instructor1@example.com", "password": "hashed_password", "roles": ["instructor"]}
+# ]
 
 # Sample courses
 courses_data = [
-  # Add French course data here (10 courses)
   {
-    "title": "Français pour débutants",  # French for Beginners
-    "description": "Apprenez les bases du français et commencez à converser !",  # Learn the basics of French and start conversing!
-    "instructor_id": 1,  # Assign an instructor ID for French courses (replace with actual ID)
-    "students_enrolled": [],
-    "modules": [
-      "Introduction à la langue française",  # Introduction to the French Language
-      "Salutations et présentations",  # Greetings and Introductions
-      "L'alphabet et la prononciation",  # The Alphabet and Pronunciation
-      "Les phrases de base",  # Basic Phrases
-    ],
-  },
-  {
-    "title": "Français intermédiaire",  # Intermediate French
-    "description": "Développez vos compétences linguistiques et renforcez votre conversation en français.",  # Develop your language skills and strengthen your French conversation.
+    "title": "Français pour débutants",
+    "description": "Apprenez les bases du français et commencez à converser !",
     "instructor_id": 1,
     "students_enrolled": [],
     "modules": [
-      "Grammaire française plus avancée",  # More Advanced French Grammar
-      "Compréhension orale et écrite",  # Listening and Reading Comprehension
-      "Expression écrite et conversation",  # Written Expression and Conversation
-      "Les temps verbaux",  # Verb Tenses
+      "Introduction à la langue française",
+      "Salutations et présentations",
+      "L'alphabet et la prononciation",
+      "Les phrases de base",
     ],
+    "embed_link": '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR76f5BnkUdLaQXVsMurmeFS9QPSDJ6uIP3NkUKcS24EsWTQKpg9EBgowpGuxTrpA/embed?start=false&loop=false&delayms=10000" frameborder="0" width="1920" height="1109" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
   },
   {
-    "title": "Français avancé",  # Advanced French
-    "description": "Maîtrisez la langue française et exprimez-vous avec aisance.",  # Master the French language and express yourself with ease.
+    "title": "Français intermédiaire",
+    "description": "Développez vos compétences linguistiques et renforcez votre conversation en français.",
     "instructor_id": 1,
     "students_enrolled": [],
     "modules": [
-      "Vocabulaire thématique",  # Thematic Vocabulary
-      "Stylistique et expression nuancée",  # Stylistics and Nuanced Expression
-      "Préparation aux examens (DELF, TCF)",  # Exam Preparation (DELF, TCF)
-      "Français des affaires",  # Business French
+      "Grammaire française plus avancée",
+      "Compréhension orale et écrite",
+      "Expression écrite et conversation",
+      "Les temps verbaux",
     ],
+    "embed_link": '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR76f5BnkUdLaQXVsMurmeFS9QPSDJ6uIP3NkUKcS24EsWTQKpg9EBgowpGuxTrpA/embed?start=false&loop=false&delayms=10000" frameborder="0" width="1920" height="1109" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
   },
   {
-    "title": "Conversation française",  # French Conversation
-    "description": "Améliorez votre aisance à l'oral et pratiquez la conversation en français dans un cadre dynamique.",  # Improve your speaking fluency and practice French conversation in a dynamic setting.
+    "title": "Français avancé",
+    "description": "Maîtrisez la langue française et exprimez-vous avec aisance.",
     "instructor_id": 1,
     "students_enrolled": [],
     "modules": [
-      "Discussions sur des sujets d'actualité",  # Discussions on Current Events
-      "Jeux de rôle et simulations",  # Role-playing and Simulations
-      "Débats et présentations",  # Debates and Presentations
-      "Expression orale spontanée",  # Spontaneous Speaking
+      "Vocabulaire thématique",
+      "Stylistique et expression nuancée",
+      "Préparation aux examens (DELF, TCF)",
+      "Français des affaires",
     ],
+    "embed_link": '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR76f5BnkUdLaQXVsMurmeFS9QPSDJ6uIP3NkUKcS24EsWTQKpg9EBgowpGuxTrpA/embed?start=false&loop=false&delayms=10000" frameborder="0" width="1920" height="1109" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
   },
   {
-    "title": "Français sur objectifs spécifiques",  # French for Specific Purposes
-    "description": "Apprenez le français adapté à vos besoins professionnels ou personnels.",  # Learn French tailored to your professional or personal needs.
+    "title": "Conversation française",
+    "description": "Améliorez votre aisance à l'oral et pratiquez la conversation en français dans un cadre dynamique.",
     "instructor_id": 1,
     "students_enrolled": [],
     "modules": [
-      "Français du tourisme",  # French for Tourism
-      "Français des affaires",  # Business French
-      "Français juridique",  # Legal French
-      "Français médical",  # Medical French
+      "Discussions sur des sujets d'actualité",
+      "Jeux de rôle et simulations",
+      "Débats et présentations",
+      "Expression orale spontanée",
     ],
+    "embed_link": '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR76f5BnkUdLaQXVsMurmeFS9QPSDJ6uIP3NkUKcS24EsWTQKpg9EBgowpGuxTrpA/embed?start=false&loop=false&delayms=10000" frameborder="0" width="1920" height="1109" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
   },
   {
-    "title": "French for Travelers",  # Added course
+    "title": "Français sur objectifs spécifiques",
+    "description": "Apprenez le français adapté à vos besoins professionnels ou personnels.",
+    "instructor_id": 1,
+    "students_enrolled": [],
+    "modules": [
+      "Français du tourisme",
+      "Français des affaires",
+      "Français juridique",
+      "Français médical",
+    ],
+    "embed_link": '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR76f5BnkUdLaQXVsMurmeFS9QPSDJ6uIP3NkUKcS24EsWTQKpg9EBgowpGuxTrpA/embed?start=false&loop=false&delayms=10000" frameborder="0" width="1920" height="1109" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
+  },
+  {
+    "title": "French for Travelers",
     "description": "Learn essential French phrases and vocabulary for navigating French-speaking destinations with confidence.",
-    "instructor_id": 1,  # Assign an instructor ID for French courses (replace with actual ID)
+    "instructor_id": 1,
     "students_enrolled": [],
     "modules": [
       "Greetings and basic conversation",
@@ -121,97 +125,29 @@ courses_data = [
       "Shopping and bargaining",
       "Cultural etiquette and customs",
     ],
+    "embed_link": '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR76f5BnkUdLaQXVsMurmeFS9QPSDJ6uIP3NkUKcS24EsWTQKpg9EBgowpGuxTrpA/embed?start=false&loop=false&delayms=10000" frameborder="0" width="1920" height="1109" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
   },
-  
   {
-        "title": "Français pour débutants",  # French for Beginners
-        "description": "Apprenez les bases du français et commencez à converser !",  # Learn the basics of French and start conversing!
-        "instructor_id": 1,  # Assign an instructor ID for French courses (replace with actual ID)
-        "students_enrolled": [],
-        "modules": [
-            "Introduction à la langue française",  # Introduction to the French Language
-            "Salutations et présentations",  # Greetings and Introductions
-            "L'alphabet et la prononciation",  # The Alphabet and Pronunciation
-            "Les phrases de base",  # Basic Phrases
-        ],
-    },
-    {
-        "title": "Français intermédiaire",  # Intermediate French
-        "description": "Développez vos compétences linguistiques et renforcez votre conversation en français.",  # Develop your language skills and strengthen your French conversation.
-        "instructor_id": 1,
-        "students_enrolled": [],
-        "modules": [
-            "Grammaire française plus avancée",  # More Advanced French Grammar
-            "Compréhension orale et écrite",  # Listening and Reading Comprehension
-            "Expression écrite et conversation",  # Written Expression and Conversation
-            "Les temps verbaux",  # Verb Tenses
-        ],
-    },
-    {
-        "title": "Français avancé",  # Advanced French
-        "description": "Maîtrisez la langue française et exprimez-vous avec aisance.",  # Master the French language and express yourself with ease.
-        "instructor_id": 1,
-        "students_enrolled": [],
-        "modules": [
-            "Vocabulaire thématique",  # Thematic Vocabulary
-            "Stylistique et expression nuancée",  # Stylistics and Nuanced Expression
-            "Préparation aux examens (DELF, TCF)",  # Exam Preparation (DELF, TCF)
-            "Français des affaires",  # Business French
-        ],
-    },
-    {
-        "title": "Conversation française",  # French Conversation
-        "description": "Améliorez votre aisance à l'oral et pratiquez la conversation en français dans un cadre dynamique.",  # Improve your speaking fluency and practice French conversation in a dynamic setting.
-        "instructor_id": 1,
-        "students_enrolled": [],
-        "modules": [
-            "Discussions sur des sujets d'actualité",  # Discussions on Current Events
-            "Jeux de rôle et simulations",  # Role-playing and Simulations
-            "Débats et présentations",  # Debates and Presentations
-            "Expression orale spontanée",  # Spontaneous Speaking
-        ],
-    },
-    {
-        "title": "Français sur objectifs spécifiques",  # French for Specific Purposes
-        "description": "Apprenez le français adapté à vos besoins professionnels ou personnels.",  # Learn French tailored to your professional or personal needs.
-        "instructor_id": 1,
-        "students_enrolled": [],
-        "modules": [
-            "Français du tourisme",  # French for Tourism
-            "Français des affaires",  # Business French
-            "Français juridique",  # Legal French
-            "Français médical",  # Medical French
-        ],
-    },
-    {
-        "title": "Français pour voyageurs",  # French for Travelers
-        "description": "Préparez-vous pour vos voyages dans les pays francophones.",  # Prepare for your travels in French-speaking countries.
-        "instructor_id": 2,
-        "students_enrolled": [],
-        "modules": [
-            "Expressions de voyage essentielles",  # Essential Travel Phrases
-            "Navigation et directions",  # Navigation and Directions
-            "Interaction dans les restaurants et hôtels",  # Interaction in Restaurants and Hotels
-            "Situations d'urgence",  # Emergency Situations
-        ],
-    },
-    {
-        "title": "Français pour les affaires",  # French for Business
-        "description": "Améliorez vos compétences linguistiques pour le monde des affaires.",  # Improve your language skills for the business world.
-        "instructor_id": 2,
-        "students_enrolled": [],
-        "modules": [
-            "Vocabulaire commercial",  # Commercial Vocabulary
-            "Correspondance professionnelle",  # Professional Correspondence
-            "Négociations et réunions",  # Negotiations and Meetings
-            "Culture d'entreprise française",  # French Business Culture
-        ],
-    },
+    "title": "Français pour les affaires",
+    "description": "Améliorez vos compétences linguistiques pour le monde des affaires.",
+    "instructor_id": 1,
+    "students_enrolled": [],
+    "modules": [
+      "Vocabulaire commercial",
+      "Correspondance professionnelle",
+      "Négociations et réunions",
+      "Culture d'entreprise française",
+    ],
+    "embed_link": '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR76f5BnkUdLaQXVsMurmeFS9QPSDJ6uIP3NkUKcS24EsWTQKpg9EBgowpGuxTrpA/embed?start=false&loop=false&delayms=10000" frameborder="0" width="1920" height="1109" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
+  },
 ]
 
 
-for user_data in users_data:
-    user_data['_id'] = generate_userID()  # Generate 5-character ID
+
+
+
+# for user_data in users_data:
+#     user_data['_id'] = generate_userID()  # Generate 5-character ID
 
 for course_data in courses_data:
     course_data['_id'] = generate_courseID()  # Generate 3-character ID
@@ -235,7 +171,7 @@ for course_data in courses_data:
 # ]
 
 # Insert data into collections
-users_collection.insert_many(users_data)
+# users_collection.insert_many(users_data)
 courses_collection.insert_many(courses_data)
 # enrollments_collection.insert_many(enrollments_data)
 # assignments_collection.insert_many(assignments_data)

@@ -2,6 +2,7 @@ from flask import Blueprint, redirect, url_for, session, render_template, curren
 from flask_login import login_user, logout_user, login_required, current_user
 from app.models import User, Course
 from app.forms import RegistrationForm, LoginForm, Enroll
+from app.link_handler import get_src
 
 main = Blueprint('main', __name__)
 
@@ -20,9 +21,13 @@ def dashboard():
     name = current_user.name
     user_email = current_user.email
     course_ids = User.get_user_courses(user_email)
-    courses = []
+    courses = []    
     for course_id in course_ids:
-        courses.append(Course.get_course(course_id))
+        course = Course.get_course(course_id)
+        course['src'] = get_src(course['embed_link'])
+        courses.append(course)
+        
+        # print('in routes course', course['src'])
 
     # print(' this is the user email', user_email)
     # print('I should print courses here', courses)
@@ -32,6 +37,11 @@ def dashboard():
 @login_required
 def chatbot():
     return render_template('chatbot.html')
+
+@main.route('/learning')
+@login_required
+def learning():
+    return render_template('learning.html')
 
 
 # TODO: Checck why it is not validating  
@@ -49,35 +59,6 @@ def courses(email=None, course_id=None):
 def liked_courses():
     return render_template('liked-course.html')
 
-# User registration
-# @main.route('/register', methods=['GET', 'POST'])
-# def register():
-#     form = RegistrationForm()
-#     if form.validate_on_submit():
-#         name = form.name.data
-#         email = form.email.data
-#         password = form.password.data
-#         existing_user = User.get_by_email(email)
-#         if existing_user is None:
-#             user = User.create(email, name, email, password)
-#             login_user(user)
-#             return redirect(url_for('main.dashboard'))
-#         else:
-#             flash('A user with that email already exists.')
-#     return render_template('register.html', form=form)
-
-# # User login
-# @main.route('/login', methods=['GET', 'POST'])
-# def login():
-#     form = LoginForm()
-#     if form.validate_on_submit():
-#         user = User.get_by_email(form.email.data)
-#         if user and user.check_password(form.password.data):
-#             login_user(user)
-#             return redirect(url_for('main.dashboard'))
-#         else:
-#             flash('Invalid email or password.')
-#     return render_template('login.html', form=form)
 
 @main.route('/register', methods=['GET', 'POST'])
 def register():

@@ -34,3 +34,28 @@ td:last-child {
 .confirmation {
     display: none;
 }
+
+.view-button {
+    background-color: #5162CE;
+    color: white;
+    height: 20px;
+    width: auto;
+    /* border: none; */
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    /* font-weight: bold; */
+    margin: 20px;
+    border: 1.5px solid black;
+}
+
+.view-button:hover {
+    background-color: #3A4C9C;
+    color: white;
+    border: 1.5px solid black;
+}
+
+.view-button a {
+    color: white;
+    text-decoration: none;
+}

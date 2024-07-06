@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/learning.css') }}">
+    <title>Learning Platform</title>
+</head>
+<body>
+    <section>   
+        <div id="COURSES_DIV_1">
+            <div id="COURSES_DIV_2">
+                <span id="COURSES_SPAN_3">French</span>
+            </div>
+            <div id="COURSES_DIV_4">
+                <div id="COURSES_DIV_5">
+                    <!-- Course title will be inserted here -->
+                </div>
+                <div class="sub-title">
+                    <p id="course-description"></p>
+                </div>
+                <div class="content-block">
+                    <h2>Description</h2>
+                    <div id="course-description-details">
+                        <!-- Additional description details can be added here -->
+                    </div>
+                    <p><span class="highlight-text">Duration</span><br>Approximately 20 minutes</p>
+                </div>
+                
+                <div class="content-block">
+                    <h2>Learn here:</h2>
+                    <iframe src="" id="embed-link" width="100%" height="500px"></iframe>
+                </div>
+
+                <div class="content-block">
+                    <a href="#" target="_blank" class="button-standard">Take a Test</a>
+                    <a href="{{url_for('main.dashboard')}}" target="_self" class="button-standard">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log(sessionStorage.getItem('courseTitle'));
+            console.log(sessionStorage.getItem('courseDescription'));
+            console.log(sessionStorage.getItem('src'));
+            // console.log(sessionStorage.getItem('courseId'));
+            document.getElementById('COURSES_DIV_5').textContent = sessionStorage.getItem('courseTitle') || 'Course Title Not Available';
+            document.getElementById('course-description-details').textContent = sessionStorage.getItem('courseDescription') || 'Course Description Not Available';
+            let src = sessionStorage.getItem('src');
+            console.log(src);
+            if (src) {
+                document.getElementById('embed-link').src = src;
+            } else {
+                console.log('No src found');
+                document.getElementById('embed-link').src = 'https://docs.google.com/document/d/e/2PACX-1vThzX9L5P7I1bdbw1JUNDiB0-NcbWTD598iLY90tTGxXrK_bL3IU-RGc7MOVa_-iopOgs93DAVpdMm4/pub?embedded=true';
+            }
+        });
+    </script>
+</body>
+</html>

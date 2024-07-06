@@ -20,10 +20,11 @@
                     </thead>
                     <tbody>
                             {% for course in courses %}
-                                <tr>
+                               <tr>
                                     <td>{{ course.title }}</td>
                                     <td>{{course.description}}</td>
                                     <td>{{course._id}}</td>
+                                    <td class="view-button"><a href="{{ url_for('main.learning') }}" onclick="storeCourseDetails('{{ course.title }}', '{{ course.description }}', '{{ course._id }}', '{{ course.src }}')">View</a></td>
                                     <!-- <td>
                                         
                                         <button class="enroll-button">Enroll</button>
@@ -52,4 +53,13 @@
         </div>
     </div>
 </div>
+<script>
+    function storeCourseDetails(title, description, id, src) {
+        sessionStorage.setItem('courseTitle', title);
+        sessionStorage.setItem('courseDescription', description);
+        sessionStorage.setItem('courseId', id);
+        sessionStorage.setItem('src', src);
+        console.log(src);
+    }
+</script>
 {% endblock %}

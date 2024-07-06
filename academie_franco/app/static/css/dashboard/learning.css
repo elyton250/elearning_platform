@@ -1,0 +1,297 @@
+p {
+  margin: 0px;
+}
+h2 {
+      font: normal 20px Merriweather-Light, Georgia, serif;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+.detail-block {
+margin-bottom: 10px;
+}
+
+.content-block {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    text-size-adjust: 100%;
+    width: 100%;
+    column-rule-color: rgb(51, 51, 51);
+    perspective-origin: 299px 205.5px;
+    transform-origin: 299px 205.5px;
+    font: normal normal normal normal 14px / 21px Helvetica Neue, Arial, sans-serif;
+    outline: rgb(51, 51, 51) none 0px;
+    padding: 20px 0px 20px 0px;
+   border-bottom: solid 1px rgb(230, 230, 230);
+  margin-bottom: 10px;
+}
+
+.content-block iframe{
+  width: 100%;
+  height: 800px;
+  /* border: 1px solid red; */
+
+}
+
+#COURSES_DIV_1 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    text-size-adjust: 100%;
+    width: 1200px;
+    column-rule-color: rgb(51, 51, 51);
+    perspective-origin: 350px 369.5px;
+    transform-origin: 350px 369.5px;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    border-top: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
+    border-bottom: 5px solid rgb(10, 65, 129);
+    border-left: 1px solid rgb(230, 230, 230);
+    font: normal normal normal normal 14px / 21px Helvetica Neue, Arial, sans-serif;
+    margin: 20px auto;
+    outline: rgb(51, 51, 51) none 0px;
+}
+
+#COURSES_DIV_2 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    height: 34px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 63.25px 17px;
+    transform-origin: 63.25px 17px;
+    background: rgb(10, 65, 129) none repeat scroll 0% 0% / auto padding-box border-box;
+    border-top: 0px none rgb(255, 255, 255);
+    border-right: 4px solid rgb(0, 114, 198);
+    border-bottom: 0px none rgb(255, 255, 255);
+    border-left: 0px none rgb(255, 255, 255);
+    font: normal normal normal normal 12px / 34px Helvetica Neue-Bold, Arial, sans-serif;
+    margin: 10px 0px 0px -2px;
+    outline: rgb(255, 255, 255) none 0px;
+    padding: 0px 20px 0px 45px;
+}
+
+
+#COURSES_DIV_4 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    text-size-adjust: 100%;
+    width: 100%;
+    column-rule-color: rgb(51, 51, 51);
+    perspective-origin: 349px 344.5px;
+    transform-origin: 349px 344.5px;
+    border: 1px none rgb(51, 51, 51);
+    border-radius: 20px;
+    /* border: 2px red solid; */
+    font: normal normal normal normal 14px / 21px Helvetica Neue, Arial, sans-serif;
+    outline: rgb(51, 51, 51) none 0px;
+    padding: 50px 50px 100px 50px;
+}
+
+
+#COURSES_DIV_5 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+/*     height: 39px; */
+    text-size-adjust: 100%;
+    width: 598px;
+    column-rule-color: rgb(51, 51, 51);
+    perspective-origin: 299px 19.5px;
+    transform-origin: 299px 19.5px;
+    border: 0px none rgb(51, 51, 51);
+    /* border: 2px red solid; */
+    font: normal normal normal normal 32px / 39px Merriweather-Light, Georgia, serif;
+    outline: rgb(51, 51, 51) none 0px;
+}
+
+
+.sub-title {
+    box-sizing: border-box;
+    text-size-adjust: 100%;
+    width: 598px;
+    column-rule-color: rgb(184, 145, 115);
+    perspective-origin: 299px 32px;
+    transform-origin: 299px 32px;
+    font: normal normal normal normal 14px / 19px Helvetica Neue, Arial, sans-serif;
+    outline: rgb(184, 145, 115) none 0px;
+    padding: 15px 0px 15px;
+      border-bottom: solid 1px rgb(230, 230, 230) ;
+
+    color: rgb(0, 114, 198);
+    column-rule-color: rgb(184, 145, 115);
+    outline: rgb(184, 145, 115) none 0px;
+
+}
+
+
+
+#COURSES_DIV_8 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    height: 28px;
+    text-size-adjust: 100%;
+    width: 598px;
+    column-rule-color: rgb(51, 51, 51);
+    perspective-origin: 299px 14px;
+    transform-origin: 299px 14px;
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 14px / 21px Helvetica Neue, Arial, sans-serif;
+    outline: rgb(51, 51, 51) none 0px;
+}
+
+
+
+
+
+
+
+#COURSES_DIV_14 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    height: 49px;
+    text-size-adjust: 100%;
+    width: 598px;
+    column-rule-color: rgb(51, 51, 51);
+    perspective-origin: 299px 24.5px;
+    transform-origin: 299px 24.5px;
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 16px / 19px HelveticaNeue-Bold, Arial, sans-serif;
+    outline: rgb(51, 51, 51) none 0px;
+    padding: 30px 0px 0px;
+}
+
+
+#COURSES_DIV_15 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    text-size-adjust: 100%;
+    white-space: pre-wrap;
+    width: 598px;
+    column-rule-color: rgb(51, 51, 51);
+    perspective-origin: 299px 181px;
+    transform-origin: 299px 181px;
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 14px / 19px Helvetica Neue, Arial, sans-serif;
+    outline: rgb(51, 51, 51) none 0px;
+    padding: 20px 0px 0px;
+    margin: 0px 0px 40px 0px;
+}
+
+
+
+#COURSES_SPAN_3 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal normal normal 12px / 34px HelveticaNeue-Bold, Arial, sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+}
+
+
+
+#COURSES_DIV_17 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    display: flex;
+    height: 19px;
+    text-size-adjust: 100%;
+    width: 598px;
+    column-rule-color: rgb(51, 51, 51);
+    align-items: flex-start;
+    perspective-origin: 299px 9.5px;
+    transform-origin: 299px 9.5px;
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 14px / 21px Helvetica Neue, Arial, sans-serif;
+    margin: 0px;
+    outline: rgb(51, 51, 51) none 0px;
+}
+
+
+
+
+#COURSES_SPAN_3 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal normal normal 12px / 34px HelveticaNeue-Bold, Arial, sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+}
+
+
+
+#COURSES_SPAN_16 {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    text-size-adjust: 100%;
+    white-space: pre-wrap;
+    column-rule-color: rgb(51, 51, 51);
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 14px / 19px Helvetica Neue, Arial, sans-serif;
+    outline: rgb(51, 51, 51) none 0px;
+}
+
+
+
+#COURSES_HR_12 {
+    color: rgb(51, 51, 51);
+    text-size-adjust: 100%;
+    width: 598px;
+    column-rule-color: rgb(51, 51, 51);
+    perspective-origin: 299px 0.5px;
+    transform-origin: 299px 0.5px;
+    border-top: 1px solid rgb(230, 230, 230);
+    border-right: 0px none rgb(230, 230, 230);
+    border-bottom: 0px none rgb(230, 230, 230);
+    border-left: 0px none rgb(230, 230, 230);
+    font: normal normal normal normal 14px / 21px Helvetica Neue, Arial, sans-serif;
+    margin: 8px 0px;
+    outline: rgb(51, 51, 51) none 0px;
+}
+
+
+
+.button-standard {
+  background: #0072c6;
+  padding: 10px 20px;
+  margin: 10px 0px 0px 0px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+.button-standard:hover {
+  background-color: #008ff9;
+  color: white;
+  cursor: pointer;
+}
+.button-standard:active {
+  background-color: #d5d6d6;
+  opacity: 1;
+}
+
+
+.highlight-text {
+  font-weight: 400;
+  color: rgb(0, 114, 198);
+}
+
+.detail-block {
+  padding: 0px 0px 10px;
+}
+
