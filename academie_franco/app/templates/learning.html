@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="content-block">
-                    <a href="#" target="_blank" class="button-standard">Take a Test</a>
+                    <a href="{{url_for('main.test')}}" target="_self" class="button-standard" onclick="storeCourseID()">Take a Test</a>
                     <a href="{{url_for('main.dashboard')}}" target="_self" class="button-standard">Back to Dashboard</a>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             console.log(sessionStorage.getItem('courseTitle'));
             console.log(sessionStorage.getItem('courseDescription'));
             console.log(sessionStorage.getItem('src'));
-            // console.log(sessionStorage.getItem('courseId'));
+            console.log(sessionStorage.getItem('courseId'));
             document.getElementById('COURSES_DIV_5').textContent = sessionStorage.getItem('courseTitle') || 'Course Title Not Available';
             document.getElementById('course-description-details').textContent = sessionStorage.getItem('courseDescription') || 'Course Description Not Available';
             let src = sessionStorage.getItem('src');
@@ -55,6 +55,12 @@
                 document.getElementById('embed-link').src = 'https://docs.google.com/document/d/e/2PACX-1vThzX9L5P7I1bdbw1JUNDiB0-NcbWTD598iLY90tTGxXrK_bL3IU-RGc7MOVa_-iopOgs93DAVpdMm4/pub?embedded=true';
             }
         });
+
+        function storeCourseID() {
+            sessionStorage.setItem('courseId', sessionStorage.getItem('courseId'));
+            // console.log(courseId)
+        };
+        
     </script>
 </body>
 </html>

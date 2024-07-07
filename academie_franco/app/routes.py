@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, url_for, session, render_template, current_app, flash,get_flashed_messages
+from flask import Blueprint, redirect, url_for, session, render_template, current_app, flash,get_flashed_messages,jsonify
 from flask_login import login_user, logout_user, login_required, current_user
 from app.models import User, Course
 from app.forms import RegistrationForm, LoginForm, Enroll
@@ -11,9 +11,6 @@ main = Blueprint('main', __name__)
 def index():
     return render_template('landing.html')
 
-@main.route('/sign-in')
-def sign_in():
-    return render_template('sign-in.html')
 
 @main.route('/dash')
 @login_required
@@ -43,8 +40,17 @@ def chatbot():
 def learning():
     return render_template('learning.html')
 
+@main.route('/test')
+@login_required
+def test():
+    email = current_user.email
+    name = current_user.name
+    courses = User.get_user_courses(email) or []
+    # course_dict = {}
+    # course_dict[f'{name}\'s courses'] = courses or {}
+    return render_template('test.html', courses=courses, name=name, email=email)
 
-# TODO: Checck why it is not validating  
+# TODO: Check why it is not validating  
 @main.route('/courses', methods=['GET', 'POST'])
 def courses(email=None, course_id=None):
     enroll = Enroll()

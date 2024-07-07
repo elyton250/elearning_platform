@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Online Test</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesom Icon -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- semantic-ui -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+  </head>
+  <body>
+    <div>
+      <div class="container">
+        <div class="card mt-4 shadow">
+          <div class="card-body">
+            <h3
+              class="card-title"
+              style="font-family: 'Open Sans', sans-serif; font-weight: bold"
+            >
+              Online Quiz
+            </h3>
+            <p style="color: #4c4c4c; font-family: 'Open Sans', sans-serif;">
+              Please answer the Online Quiz below. You will receive 2 points for
+              every correct answer submitted. You have only one attempt to take
+              the Online Quiz test. The quiz will take 5 minutes to complete.
+            </p>
+            <hr />
+            <div class="questions">
+              <div class="question shadow-sm p-4 border bg-light mt-3">
+                <!-- <button
+                  class="refresh-answer btn btn-outline-danger float-right"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Reset answers"
+                  onclick="resetAnswe('option-of-question-no-1')"
+                >
+                  <i class="fa fa-refresh p-1" aria-hidden="true"></i>
+                </button>-->
+                <h5 style="font-family: 'Poppins', sans-serif;">
+                  What is the longest river in the world?
+                </h5>
+                <div class="answer-options ml-3">
+                  <div class="option">
+                    <div class="ui form">
+                      <div class="grouped fields">
+                        <div class="field">
+                          <div class="ui radio checkbox">
+                            <input
+                              type="radio"
+                              name="example2"
+                              class="option-of-question-no-1"
+                              id="option1"
+                            />
+                            <label for="option1">Once a week</label>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="ui radio checkbox">
+                            <input
+                              type="radio"
+                              name="example2"
+                              class="option-of-question-no-1"
+                              id="option2"
+                            />
+                            <label for="option2">2-3 times a week</label>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="ui radio checkbox">
+                            <input
+                              type="radio"
+                              name="example2"
+                              class="option-of-question-no-1"
+                              id="option3"
+                            />
+                            <label for="option3">Once a day</label>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="ui radio checkbox">
+                            <input
+                              type="radio"
+                              name="example2"
+                              class="option-of-question-no-1"
+                              id="option4"
+                            />
+                            <label for="option4">Twice a day</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group mt-3 ">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"
+                        >Your Answer</span
+                      >
+                    </div>
+                    <input type="text" class="form-control" readonly />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard/test.js') }}"></script>
+    <script>
+        var course_id = sessionStorage.getItem("courseId");
+        console.log('I should be seeing the id and courses here');
+        console.log('Course ID: ', course_id);
+
+        // API request to get course details
+        fetch('/api/v1/courses')
+            .then(response => response.json())
+            .then(courses => {
+                console.log('data from server', courses);
+                
+                // Find the course for the test
+                var course_for_test = courses.find(course => course._id === course_id);
+                console.log('Course: ', course_for_test);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+  </body>
+</html>
