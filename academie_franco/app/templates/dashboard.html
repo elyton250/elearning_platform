@@ -24,7 +24,7 @@
                                     <td>{{ course.title }}</td>
                                     <td>{{course.description}}</td>
                                     <td>{{course._id}}</td>
-                                    <td class="view-button"><a href="{{ url_for('main.learning') }}" onclick="storeCourseDetails('{{ course.title }}', '{{ course.description }}', '{{ course._id }}', '{{ course.src }}')">View</a></td>
+                                    <td class="view-button"><a href="{{ url_for('main.learning') }}" onclick="storeCourseDetails('{{ course.title }}', '{{ course.description }}', '{{ course._id }}', '{{ course.src }}', '{{ user_email }}')">View</a></td>
                                     <!-- <td>
                                         
                                         <button class="enroll-button">Enroll</button>
@@ -45,6 +45,50 @@
                                     </td> -->
                                 </tr>
                             {% endfor %}
+
+                    </tbody>
+                </table>
+
+                {% if courses_marks %}
+                <table id="myTable" id="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <!--<th>Course ID</th>-->
+                            <th>Marks</th>
+                            <!--<th>Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for course_mark in courses_marks %}
+                               <tr>
+                                    <td>{{ course_mark.course.title }}</td>
+                                    <td>{{course_mark.marks}}</td>
+                                    <!-- <td>
+                                        
+                                        <button class="enroll-button">Enroll</button>
+                                        <span class="confirmation">
+                                            <form  method="POST" action="{{ url_for('main.courses') }}">
+                                                    <span>Re-enter your email and course ID to confirm</span><br>
+                                                    <label for="email">Email:</label><br>
+                                                    <input type="email" id="email" name="email" size="32"><br>
+                                                    <label for="email">Course ID:</label><br>
+                                                    <input type="text" id="course_id" name="course_id" size="32"><br>
+                                                    <button class="confirm">✓</button>
+                                                    <button class="cancel-button">❌</button> 
+                                                
+                                            </form>
+                                             <button class="confirm">✓</button>
+                                            <button class="cancel-button">❌</button>
+                                        </span>
+                                    </td> -->
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                                <p>You have not taken any tests yet. Click on the courses tab to enroll to one of our courses.</p>
+                        {% endif %}
+
+                            
                     </tbody>
                 </table>
             {% else %}
@@ -54,11 +98,14 @@
     </div>
 </div>
 <script>
-    function storeCourseDetails(title, description, id, src) {
+    function storeCourseDetails(title, description, id, src, user_email) {
         sessionStorage.setItem('courseTitle', title);
         sessionStorage.setItem('courseDescription', description);
         sessionStorage.setItem('courseId', id);
         sessionStorage.setItem('src', src);
+        sessionStorage.setItem('userEmail', user_email);	
+
+        console.log('this is the user email', user_email);
         console.log(id);
     }
 </script>

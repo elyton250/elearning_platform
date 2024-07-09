@@ -46,7 +46,7 @@ td:last-child {
     border-radius: 5px;
     /* font-weight: bold; */
     margin: 20px;
-    border: 1.5px solid black;
+    border-radius: 10px;
 }
 
 .view-button:hover {

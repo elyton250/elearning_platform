@@ -63,15 +63,15 @@ courses_data = [
     "test": {
       "Q1": ["Quelle est la capitale de la France?", "Paris", "Lyon", "Marseille", "Toulouse"],
       "Q2": ["Comment dit-on 'hello' en français?", "Bonjour", "Au revoir", "Merci", "S'il vous plaît"],
-      "Q3": ["Quelle est la couleur du ciel?", "Bleu", "Vert", "Rouge", "Jaune"],
+      "Q3": ["Quelle est la couleur du ciel?", "Vert","Bleu", "Rouge", "Jaune"],
       "Q4": ["Combien de jours y a-t-il dans une semaine?", "7", "5", "10", "14"],
       "Q5": ["Quel est le chiffre après 3?", "4", "2", "5", "6"],
       "answers": {
         "Q1": 1,
-        "Q2": 3,
-        "Q3": 0,
-        "Q4": 0,
-        "Q5": 0
+        "Q2": 1,
+        "Q3": 2,
+        "Q4": 1,
+        "Q5": 1
       }
     }
   },
@@ -92,13 +92,13 @@ courses_data = [
       "Q2": ["Quelle est la traduction de 'book' en français?", "Livre", "Boucle", "Boîte", "Banc"],
       "Q3": ["Quel est le contraire de 'grand'?", "Petit", "Lourd", "Léger", "Court"],
       "Q4": ["Comment dit-on 'to play' en français?", "Jouer", "Manger", "Lire", "Écrire"],
-      "Q5": ["Quelle est la couleur de l'herbe?", "Verte", "Bleue", "Rouge", "Jaune"],
+      "Q5": ["Quelle est la couleur de l'herbe?", "Bleue",  "Verte", "Rouge", "Jaune"],
       "answers": {
         "Q1": 3,
-        "Q2": 0,
-        "Q3": 0,
-        "Q4": 0,
-        "Q5": 0
+        "Q2": 1,
+        "Q3": 1,
+        "Q4": 1,
+        "Q5": 2
       }
     }
   },
@@ -117,15 +117,15 @@ courses_data = [
     "test": {
       "Q1": ["Que signifie 'périphrase'?", "Une phrase complexe", "Une figure de style", "Une forme verbale", "Un temps grammatical"],
       "Q2": ["Quel est le synonyme de 'rapide'?", "Vite", "Lent", "Fort", "Haut"],
-      "Q3": ["Comment dit-on 'to understand' en français?", "Comprendre", "Apprendre", "Vendre", "Entendre"],
+      "Q3": ["Comment dit-on 'to understand' en français?",  "Apprendre", "Comprendre", "Vendre", "Entendre"],
       "Q4": ["Quel est le pluriel de 'cheval'?", "Chevaux", "Chevals", "Chevalles", "Chevales"],
       "Q5": ["Quelle est la capitale du Canada?", "Ottawa", "Toronto", "Vancouver", "Montréal"],
       "answers": {
-        "Q1": 1,
-        "Q2": 0,
-        "Q3": 0,
-        "Q4": 0,
-        "Q5": 0
+        "Q1": 2,
+        "Q2": 1,
+        "Q3": 2,
+        "Q4": 1,
+        "Q5": 2
       }
     }
   },
@@ -148,11 +148,11 @@ courses_data = [
       "Q4": ["Quel est le monument emblématique de Paris?", "Tour Eiffel", "Big Ben", "Statue de la Liberté", "Colisée"],
       "Q5": ["Comment dit-on 'merci' en français?", "Merci", "Hello", "Goodbye", "Please"],
       "answers": {
-        "Q1": 0,
-        "Q2": 0,
-        "Q3": 0,
-        "Q4": 0,
-        "Q5": 0
+        "Q1": 1,
+        "Q2": 1,
+        "Q3": 1,
+        "Q4": 1,
+        "Q5": 1
       }
     }
   }]

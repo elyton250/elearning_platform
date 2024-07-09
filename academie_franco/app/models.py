@@ -7,12 +7,13 @@ from app.id_gen import generate_userID, generate_courseID
 import uuid
 
 class User(UserMixin):
-    def __init__(self, id, name, email, password_hash=None, courses_id=None, courses=[]):
+    def __init__(self, id, name, email, password_hash=None, courses_id=None, courses=[], marks=None):
         self.id = id
         self.name = name
         self.email = email
         self.password_hash = password_hash
         self.courses = courses_id or []
+        self.marks = marks or []
 
     @staticmethod
     def get_all_users():
@@ -23,13 +24,16 @@ class User(UserMixin):
 
     @staticmethod
     def get_user_courses(email):
+        # print('using this email', email)
         user = User.get_by_email_enroll(email)
+        # print('this is the user', user)
         return user['courses']
     
     
    
     @staticmethod
     def add_course_to_user(email, course_id):
+        # print('I am adding this', course_id)
         user = User.get_by_email_enroll(email)
         if user:
             if 'courses' not in user:
@@ -38,10 +42,31 @@ class User(UserMixin):
                 user['courses'].append(course_id)
                 mongo.users.update_one({"_id": user["_id"]}, {"$set": {"courses": user['courses']}})
                 print("Course added to user")
-            else:
-                print("Course already added")
+                print('this is the id of the updated', user["_id"])
         else:
             print("User not found")
+    #addings marks        
+    def add_marks_to_user(user_email, course_id, marks):
+        # print('i reached the add function')
+        user = User.get_by_email_enroll(user_email)
+        # print('this is the user', user)
+        if user:
+            if 'marks' not in user:
+                user['marks'] = []
+            user['marks'].append({"course_id": course_id, "marks": marks})
+            mongo.users.update_one({"_id": user["_id"]}, {"$set": {"marks": user['marks']}})
+            user_marks = user['marks']
+            # print('this is user marks', user['marks'])
+            
+            for user_mark in user_marks:
+                if user_mark['course_id'] == course_id:
+                    return "Marks already added"
+                user_marks.append({"course_id": course_id, "marks": marks})
+                mongo.users.update_one({"_id": user["_id"]}, {"$set": {"marks": user_marks}})
+                print("Marks added to user")
+        else:
+            print("User not found")
+
 
     @staticmethod
     def get(user_id):
@@ -55,6 +80,7 @@ class User(UserMixin):
     @staticmethod
     def get_by_email_enroll(email):
         user_doc = mongo.users.find_one({"email": email})
+        print('this is the user doc', user_doc)
         if user_doc:
             return user_doc
         return None
@@ -65,6 +91,12 @@ class User(UserMixin):
         if user_doc:
             return User(user_doc["_id"], user_doc["name"], user_doc["email"], user_doc["password_hash"])
         return None
+    
+    @staticmethod
+    def get_user_marks(user_email):
+        user = User.get_by_email_enroll(user_email)
+        return user['marks']
+    
 
     @staticmethod
     def create(name, email, password):
@@ -76,6 +108,7 @@ class User(UserMixin):
             "email": email,
             "password_hash": password_hash,
             "courses": [],
+            "marks": [],
         }
         mongo.users.insert_one(user_doc)
         return User(_id, name, email, password_hash)
@@ -180,4 +213,5 @@ class Course:
         }
         mongo.db.courses.insert_one(course_doc)
         return Course(_id, title, description, instructor, lessons)
+
  

@@ -8,6 +8,10 @@ from app import mongo
 api_v1 = Blueprint('api_v1', __name__)
 
 # GET Methods
+#
+#
+#
+#GET Methods
 
 @api_v1.route('/courses', methods=['GET'])
 def get_all_courses():
@@ -34,7 +38,16 @@ def get_all_users():
     users = User.get_all_users()
     return jsonify(users)
 
+#TODO: add the get_marks_by_user method
+
 # POST Methods
+#
+#
+#
+#
+#
+#
+# POST METHODS 
 
 @api_v1.route('/post_courses_to_user', methods=['POST'])
 def add_course_to_user(email=None, course_id=None):
@@ -61,3 +74,17 @@ def create_course():
         return jsonify({'error': 'Missing required fields: title, description, instructor, lessons'}), 400
     course = Course.create(title, description, instructor, lessons)
     return jsonify(course), 201
+
+
+@api_v1.route('/post_marks', methods=['POST'])
+def post_marks():
+    data = request.get_json()
+    user_email = data.get('user_email')
+    course_id = data.get('course_id')
+    marks = data.get('marks')
+    # print('i am here', user_email, course_id, marks)
+    if not user_email or not course_id or not marks:
+        return jsonify({'error': 'Missing required fields: user_id, course_id, marks'}), 400
+    User.add_marks_to_user(user_email, course_id, marks)
+    return jsonify({'message': 'Marks added successfully.'}), 200
+

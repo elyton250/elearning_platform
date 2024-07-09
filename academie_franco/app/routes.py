@@ -16,19 +16,38 @@ def index():
 @login_required
 def dashboard():
     name = current_user.name
+    user_id = current_user.id
     user_email = current_user.email
+    user_marks = User.get_user_marks(user_email)
+    # print('this is the user marks', user_marks)
+    # print('this is the user email', user_email)
+    
+    
     course_ids = User.get_user_courses(user_email)
+    # print('this is the course ids', course_ids)
     courses = []    
     for course_id in course_ids:
         course = Course.get_course(course_id)
         course['src'] = get_src(course['embed_link'])
         courses.append(course)
+    
+    courses_marks = []
+    if user_marks:
+        for mark in user_marks:
+            course = Course.get_course(mark['course_id'])
+            courses_marks.append({'course': course, 'marks': mark['marks']})
+            
+    # print('this is courses marks', courses_marks)
+    # print('this is course in courses marks', courses_marks[0]['course'])
+    
         
         # print('in routes course', course['src'])
 
     # print(' this is the user email', user_email)
     # print('I should print courses here', courses)
-    return render_template('dashboard.html', courses=courses, name=name)
+    print('this is the user marks', user_marks)
+    print('these are courses', courses)
+    return render_template('dashboard.html', courses=courses, name=name, user_id=user_id, user_email=user_email, courses_marks=courses_marks)
 
 @main.route('/chat')
 @login_required

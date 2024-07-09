@@ -3,10 +3,10 @@ import string
 
 def generate_courseID():
     """
-    Generates a unique 3-character ID.
+    Generates a unique 3-character ID consisting only of uppercase letters.
     """
-    # Define the characters allowed in the ID (excluding ambiguous ones)
-    allowed_chars = string.ascii_uppercase + string.digits
+    # Define the characters allowed in the ID (A-Z)
+    allowed_chars = string.ascii_uppercase
     # Generate a random 3-character ID
     unique_id = ''.join(random.choice(allowed_chars) for _ in range(3))
     return unique_id

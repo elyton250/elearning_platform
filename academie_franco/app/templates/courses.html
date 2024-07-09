@@ -34,7 +34,7 @@
                                                         <input type="email" id="email" name="email" size="32"><br>
                                                         <label for="email">Course ID:</label><br>
                                                         <input type="text" id="course_id" name="course_id" size="32"><br>
-                                                        <button class="confirm">✓</button>
+                                                        <button class="confirm" onclick="redirectToPage()">✓</button>
                                                         <button class="cancel-button">❌</button> 
                                                     
                                                 </form>
@@ -119,6 +119,8 @@
 </div>
 </div>
 <script>
-    
+    function redirectToPage() {
+        window.location.href = "{{ url_for('main.dashboard') }}";
+    }
   </script>
 {% endblock %}

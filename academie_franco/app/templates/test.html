@@ -32,7 +32,7 @@
         <div class="questions" id="questions-container">
           <!-- Questions will be injected here by JavaScript -->
         </div>
-        <button class="btn btn-primary mt-3">Submit Quiz</button>
+        <button class="btn btn-primary mt-3" onclick="redirectToPage()">Submit Quiz</button>
       </div>
     </div>
   </div>
@@ -44,6 +44,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
     var course_id = sessionStorage.getItem("courseId");
+    var user_id = sessionStorage.getItem("userId");
+    var userEmail = sessionStorage.getItem("userEmail");
+    console.log('User Email: ', userEmail);
     var selectedAnswers = {}; // Object to store selected answers
     var marks = 0; // Variable to store total marks
     var test_questions = {}; // Object to store test questions
@@ -122,6 +125,30 @@
           });
           
           console.log('Total Marks: ', marks);
+
+          // Submit marks to server
+          const marks_data ={
+            'user_email': userEmail,
+            'course_id': course_id,
+            'marks': marks
+          };
+
+          // API request to submit marks
+
+          fetch('/api/v1/post_marks', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(marks_data)
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
           
           // Logic to submit answers to server or perform further actions
           // For demonstration, just alerting the total marks
@@ -129,6 +156,10 @@
         });
       })
       .catch(error => console.error('Error:', error));
+      // redirect
+      function redirectToPage() {
+        window.location.href = "{{ url_for('main.dashboard') }}";
+    }
   </script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 from engine import client
+from flask import request, jsonify
 from .api import create_app
 
 app = create_app()
@@ -6,7 +7,7 @@ app = create_app()
 
 db = client['edu_app_db']
 
-@app.route('/api/v1/users', methods=['POST'])
+@app.route('/api/v1/post_courses', methods=['POST'])
 def post_course(course_data):
     courses_collection = db['courses']
     result = courses_collection.insert_one(course_data)
